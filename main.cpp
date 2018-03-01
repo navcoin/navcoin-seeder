@@ -9,7 +9,7 @@
 #include <getopt.h>
 #include <atomic>
 
-#include "bitcoin.h"
+#include "navcoin.h"
 #include "db.h"
 
 using namespace std;
@@ -397,11 +397,11 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed.bluematt.me", "bitseed.xf2.org", "dnsseed.bitcoin.dashjr.org", "seed.bitcoin.sipa.be", ""};
+static const string mainnet_seeds[] = {"dnsseed.bluematt.me", "bitseed.xf2.org", "dnsseed.navcoin.dashjr.org", "seed.navcoin.sipa.be", ""};
 static const string testnet_seeds[] = {"testnet-seed.alexykot.me",
-                                       "testnet-seed.bitcoin.petertodd.org",
+                                       "testnet-seed.navcoin.petertodd.org",
                                        "testnet-seed.bluematt.me",
-                                       "testnet-seed.bitcoin.schildbach.de",
+                                       "testnet-seed.navcoin.schildbach.de",
                                        ""};
 static const string *seeds = mainnet_seeds;
 
