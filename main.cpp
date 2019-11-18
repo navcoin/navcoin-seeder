@@ -363,6 +363,11 @@ extern "C" void* ThreadDumper(void*) {
       FILE *ff = fopen("dnsstats.log", "a");
       fprintf(ff, "%llu %g %g %g %g %g\n", (unsigned long long)(time(NULL)), stat[0], stat[1], stat[2], stat[3], stat[4]);
       fclose(ff);
+      FILE *fs = fopen("nodestats.csv", "a");
+      CAddrDbStats stats;
+      db.GetStats(stats);
+      fprintf(fs, "%llu %i\n", (unsigned long long)(time(NULL)), stats.nGood);
+      fclose(fs);
     }
   } while(1);
   return nullptr;
@@ -398,7 +403,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed.nav.community", "navtech1.navcoin.org", "navtech2.navcoin.org", "navtech3.navcoin.org", "navtech4.navcoin.org", "2.84.172.191", "87.67.74.196", "203.211.98.27", ""};
+static const string mainnet_seeds[] = {"seed.nav.community", "navtech1.navcoin.org", "navtech2.navcoin.org", "navtech3.navcoin.org", "navtech4.navcoin.org", "148.251.129.229", "178.33.106.211", ""};
 static const string testnet_seeds[] = {"seed.nav.community", "176.9.19.245", "46.4.24.136",
                                        ""};
 static const string *seeds = mainnet_seeds;
