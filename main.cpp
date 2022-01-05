@@ -403,9 +403,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed.nav.community", "navtech1.navcoin.org", "navtech2.navcoin.org", "navtech3.navcoin.org", "navtech4.navcoin.org", "148.251.129.229", "178.33.106.211", ""};
-static const string testnet_seeds[] = {"seed.nav.community", "176.9.19.245", "46.4.24.136",
-                                       ""};
+static const string mainnet_seeds[] = {"seed.nav.community", "electrum.nav.community", "electrum2.nav.community", "electrum3.nav.community", "electrum4.nav.community", ""};
+static const string testnet_seeds[] = {"seed-testnet.nav.community", "electrum-testnet.nav.community", "electrum-testnet2.nav.community"};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
